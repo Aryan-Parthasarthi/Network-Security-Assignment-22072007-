@@ -1,0 +1,101 @@
+<html>
+
+<head>
+
+<title>Encipher/Decipher</title>
+
+
+<style>  
+body {
+  text-align: center;
+  background: rgba(209, 231, 236, 0.841);
+}
+.encrypt{
+  width: 400px;
+  padding: 1rem;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(166, 231, 172, 0.25);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border-radius: 4px;
+}
+.decrypt{
+  width: 400px;
+  padding: 1rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(230, 104, 104, 0.25);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border-radius: 4px;
+}
+#footer {
+position: fixed;
+bottom: 10;
+width:100%;
+}
+</style>
+
+</head>
+
+
+<body>
+  <br />
+  <br />
+  <br />
+  <h1>Network Security - 535</h1>
+  <h3>Practical Assignment 0</h3>
+  <br />
+  <h2>Encipher/Decipher</h2>
+  <br />
+  <br />
+<div class="encrypt">
+  <p>Plain text</p>
+  <textarea id="m" onkeyup="encrypt()"></textarea>
+</div>
+<br />
+<br />
+<div class="decrypt">
+  <p>Cipher text</p>
+  <textarea id="em" onkeyup="decrypt()"></textarea>
+</div>
+<div id="footer">
+    <h4>Aryan Parthasarthi ( Roll no. - 22072007 )</h4>
+</div>
+</body>
+
+
+<!--JS code for Encryption and Decryption using LookUp Table-->
+<script>
+    
+  function lookUp(c)
+{
+	var key = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	var val = "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA9876543210";
+	for(var i=0; i<62; i++) if(c == key[i]) return val[i];
+	return c;	
+}
+
+function encrypt()
+{
+	message = document.getElementById("m").value;
+    enc = "";
+    for(var i=0; i<message.length; i++) enc += lookUp(message[i]);
+	document.getElementById("em").value = enc;
+}
+
+function decrypt()
+{
+	message = document.getElementById("em").value;
+    dec = "";
+    for(var i=0; i<message.length; i++) dec += lookUp(message[i]);
+	document.getElementById("m").value = dec;
+}
+</script>
+
+</html>
