@@ -16,3 +16,7 @@ Avalanche effect when we differ plaintext in by 1 bit
 ... by 2 bits
 
 ![image](https://user-images.githubusercontent.com/63931468/215509575-78e448aa-a9ac-496e-8a24-f2fcbdfb0d9f.png)
+
+
+... by 8 bits
+![image](https://user-images.githubusercontent.com/63931468/215510224-ea1ac947-0e1c-464c-98a7-62579feeaf24.png)
